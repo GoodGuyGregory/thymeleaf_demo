@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Thymeleaf Form</title>
+</head>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+<body>
+<div class="funny">
+<!-- when posted this will create a GET request for the proces form template-->
+    <form th:action="@{/process_form}">
+        <input type="text" name="studentName" placeholder="What's your name?">
+        <input type="submit" />
+    </form>
+</div>
+<div class="funny">
+<!-- when posted this will create a GET request for the proces form template-->
+    <form th:action="@{/shout_form}">
+         <input type="text" name="sender" placeholder="What's your name?">
+        <input type="text" name="message" placeholder="What's your message??">
+        <input type="submit" />
+    </form>
+</div>
+
+<div class="funny">
+<!--    POST Method example -->
+        <form th:action="@{/send_message}" post >
+            <input type="text" name="senderName" placeholder="What's your name?">
+            <input type="text" name="message" placeholder="What is your message?">
+            <input type="text" name="recieverName" placeholder="Who is this message for?">
+            <input type="submit" />
+    </form>
+</div>
+</body>
+</html>

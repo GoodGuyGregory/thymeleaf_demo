@@ -4,18 +4,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tymeleaf Demo</title>
+    <title>Thymeleaf Params</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <div>
 <!--        <p class="funny" th:text="'Time on the server is ' + ${theDate}"></p>-->
-        <p class="funny" th:text="'Hello Welcome, ' + ${param.studentName} "></p>
-    </div>
-    <div>
-        <p class="funny">You have a new message</p>
-        <p class="funny" th:text="${message}"></p>
-        <p class="funny" th:text="'from: ' + ${sender}"></p>
+        <p class="funny" th:text="${message} + ' sent you a message' "></p>
     </div>
 
 </body>

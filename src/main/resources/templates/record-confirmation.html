@@ -1,0 +1,15 @@
+<!DOCTYPE >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Record Added Confirmation </title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="funny">
+        <h3>Success!</h3>
+        <p th:text="${newRecord.title}"></p>
+        <p th:text="${newRecord.artist}"></p>
+    </div>
+</body>
+</html>

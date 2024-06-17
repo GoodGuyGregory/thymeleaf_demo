@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tymeleaf Data Binding Demo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="funny">
+        <h3>add a record you like</h3>
+<!--         th:object has to be the same as the object name used in the controller method-->
+        <form th:action="@{/record}" th:object="${newRecord}" method="POST">
+            <input type="text" th:field="*{title}" placeholder="record title">
+            <input type="text" th:field="${newRecord.artist}" placeholder="musician/artist">
+            <input type="submit">
+        </form>
+    </div>
+
+</body>
+</html>
