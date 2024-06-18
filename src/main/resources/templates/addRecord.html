@@ -14,6 +14,31 @@
         <form th:action="@{/record}" th:object="${newRecord}" method="POST">
             <input type="text" th:field="*{title}" placeholder="record title">
             <input type="text" th:field="${newRecord.artist}" placeholder="musician/artist">
+
+            <label>Genre</label>
+
+<!--            hard coded values-->
+<!--            <select th:field="*{genre}">-->
+<!--                <option th:value="Electronica">Electronica</option>-->
+<!--                <option th:value="Indie-Rock">Indie Rock</option>-->
+<!--                <option th:value="Neo-Soul">Neo Soul</option>-->
+<!--            </select>-->
+
+            <select th:field="${newRecord.genre}" >
+<!--                loops over the list of strings-->
+                <option th:each="tempGenre: ${genres}" th:value="${tempGenre}" th:text="${tempGenre}"></option>
+            </select>
+
+            <div>
+                <label>Acquisition Method</label>
+                <input type="radio" th:field="*{methodAquired}" th:value="Purchased">Purchased</input>
+                <input type="radio"  th:field="*{methodAquired}" th:value="Gifted">Gifted</input>
+            </div>
+
+
+
+
+
             <input type="submit">
         </form>
     </div>

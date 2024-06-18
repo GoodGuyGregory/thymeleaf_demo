@@ -1,14 +1,22 @@
 package com.goodguygregory.tymeleaf_demo.controller;
 
 import com.goodguygregory.tymeleaf_demo.model.Record;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.List;
+
 @Controller
 public class RecordController {
+
+//    inject the genres values from the applications properties file
+    @Value("${genres}")
+    private List<String> genres;
+
 
     // add a model
     @GetMapping("/add_record")
@@ -18,6 +26,9 @@ public class RecordController {
 
         // add a record object ot the model
         model.addAttribute("newRecord", newRecord);
+
+        // add data to the model so that the form can use it.
+        model.addAttribute("genres", genres);
 
         return "addRecord";
     }
